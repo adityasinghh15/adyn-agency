@@ -1,4 +1,5 @@
-var count = 0;
+function loadinganimation(){
+  var count = 0;
 counter = document.querySelector("#counter");
 var timer = setInterval(() => {
   count++;
@@ -25,10 +26,45 @@ tl.to("#loader", {
   duration: 0.5,
   delay: 2.5,
 });
-tl.from("#page1",{
-	y:1200,
-	opacity:0,
+tl.from("#page1", {
+  y: 1200,
+  opacity: 0,
+});
+tl.to("#loader", {
+  display: "none",
+});
+
+tl.from(".hero h1, .hero h2",{
+  y: -100,
+  opacity: 0,
+  duration: 0.5,
+  stagger: 0.2
 })
-tl.to('#loader', {
-	display: none
+tl.from("#navbar",{
+  y: -100,
+  opacity: 0,
+  duration: 0.5
 })
+}
+
+
+
+loadinganimation();
+
+function cursoranimation() {
+  document.addEventListener("mousemove", function (dets) {
+    gsap.to(".crsr", {
+      left: dets.x,
+      top: dets.y,
+    });
+  });
+
+  Shery.makeMagnet("#nav-part2 h3" /* Element to target.*/, {
+    //Parameters are optional.
+    ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+    duration: 1,
+  });
+}
+cursoranimation();
+
+
