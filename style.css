@@ -132,6 +132,12 @@ body {
   align-items: center;
   gap: 3vw;
 }
+a {
+  text-decoration: none;
+}
+#nav-part2 h3{
+  font-size: 1.5vw;
+}
 .hero {
   font-size: 3.7vw;
   text-transform: uppercase;
